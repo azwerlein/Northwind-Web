@@ -1,8 +1,11 @@
+using Microsoft.EntityFrameworkCore;
+
 public class Product
 {
     public int ProductId { get; set; }
     public string ProductName { get; set; }
     public string QuantityPerUnit { get; set; }
+    [Precision(18, 2)]
     public decimal UnitPrice { get; set; }
     public short UnitsInStock { get; set; }
     public short UnitsOnOrder { get; set; }

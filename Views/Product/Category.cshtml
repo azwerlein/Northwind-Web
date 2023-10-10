@@ -1,0 +1,10 @@
+@model IEnumerable<Category>
+
+@foreach(Category category in Model)
+{
+    <li>@category.CategoryName - @category.Description</li>
+}
+
+@section Scripts {
+    <script type="text/javascript" src="~/js/client.js"></script>
+}
