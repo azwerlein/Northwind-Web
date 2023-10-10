@@ -1,9 +1,11 @@
 @model IEnumerable<Category>
 
+<div class="list-group">
 @foreach(Category category in Model)
 {
-    <li>@category.CategoryName - @category.Description</li>
+    <a class="list-group-item list-group-item-action" asp-action="index" asp-route-id="@category.CategoryId">@category.CategoryName - @category.Description</a>
 }
+</div>
 
 @section Scripts {
     <script type="text/javascript" src="~/js/client.js"></script>
