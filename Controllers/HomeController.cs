@@ -4,6 +4,8 @@ namespace Northwind.Controllers
 {
     public class HomeController : Controller
     {
-        public ActionResult Index() => View();
+        private DataContext _dataContext;
+        public HomeController(DataContext db) => _dataContext = db;
+        public ActionResult Index() => View(_dataContext.Discounts);
     }
 }
