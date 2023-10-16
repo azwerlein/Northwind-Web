@@ -1,0 +1,15 @@
+@model IEnumerable<Discount>
+
+<div class="list-group">
+    @foreach (Discount discount in Model)
+    {
+        <div class="list-group-item list-group-item-action">
+            <h4>@discount.Title - @discount.Description</h4>
+            <p>Ends on @discount.EndTime.ToShortDateString()</p>
+        </div>
+    }
+</div>
+
+@section Scripts {
+    <script type="text/javascript" src="~/js/client.js"></script>
+}
