@@ -1,0 +1,34 @@
+@model CustomerViewModel
+<form asp-action="Register" asp-controller="Customer" method="post">
+    <div class="form-group">
+        <label asp-for="Customer.CompanyName" class="control-label">Company name</label>
+        <input asp-for="Customer.CompanyName" class="form-control" required>
+        <label asp-for="Customer.Address" class="control-label"></label>
+        <input asp-for="Customer.Address" class="form-control">
+        <label asp-for="Customer.City" class="control-label"></label>
+        <input asp-for="Customer.City" class="form-control">
+        <label asp-for="Customer.Region" class="control-label"></label>
+        <input asp-for="Customer.Region" class="form-control">
+        <label asp-for="Customer.PostalCode" class="control-label"></label>
+        <input asp-for="Customer.PostalCode" class="form-control">
+        <label asp-for="Customer.Country" class="control-label"></label>
+        <input asp-for="Customer.Country" class="form-control">
+        <label asp-for="Customer.Phone" class="control-label"></label>
+        <input asp-for="Customer.Phone" class="form-control">
+        <label asp-for="Customer.Fax" class="control-label"></label>
+        <input asp-for="Customer.Fax" class="form-control">
+        <input type="submit" value="Send">
+    </div>
+</form>
+
+<div class="list-group">
+    @foreach (Customer customer in Model.Customers)
+    {
+        <div class="list-group-item list-group-item-action">
+            <h4>@customer.CustomerId) @customer.CompanyName</h4>
+            <p>
+                @customer.Country - @customer.Region - @customer.Phone
+            </p>
+        </div>
+    }
+</div>
